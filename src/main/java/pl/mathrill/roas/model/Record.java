@@ -11,7 +11,8 @@ public class Record {
 	@Column(nullable = false)
 	private DocumentType dokumentType;
 	private int dokumentNumber;
-	@Column(nullable = false)	private LocalDate date;
+	private LocalDate date;
+	@Column(nullable = false)
 	private String clientName;
 	private String clientNickName;
 	@Column(nullable = false)
@@ -24,7 +25,11 @@ public class Record {
 	private String description;
 	private boolean archived;
 	private boolean generated;
-	
+
+	public Record() {
+		this.date = LocalDate.now();
+	}
+
 	public Long getId() {
 		return id;
 	}
